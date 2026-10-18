@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mercurybear-ephemeris"
+version = "0.1.0"
+description = "Astronomical calculation service built on the Swiss Ephemeris"
+readme = "README.md"
+license = { text = "AGPL-3.0-only" }
+requires-python = ">=3.10"
+dependencies = [
+    "pyswisseph==2.10.3.2",
+    "fastapi>=0.115",
+    "uvicorn>=0.30",
+    "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0", "httpx>=0.27"]
+
+[project.scripts]
+mercurybear-ephemeris = "mercurybear_ephemeris.__main__:main"
+mercurybear-ephemeris-fetch = "mercurybear_ephemeris.fetch:main"
+
+[project.urls]
+Source = "https://github.com/donyue77/mercurybear-ephemeris"
+
+[tool.setuptools.packages.find]
+where = ["src"]
