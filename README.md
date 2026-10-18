@@ -35,7 +35,7 @@ curl -s localhost:8100/v1/chart -H 'content-type: application/json' \
 ## Running
 
 ```bash
-pip install git+https://github.com/donyue77/mercurybear-ephemeris@v0.1.0
+pip install git+https://github.com/donyue77/mercurybear-ephemeris   # or @<commit> to pin a version
 mercurybear-ephemeris-fetch ./ephe          # downloads and checksums the data files
 SE_EPHE_PATH=./ephe mercurybear-ephemeris    # listens on 127.0.0.1:8100 (CALC_HOST / CALC_PORT)
 ```
